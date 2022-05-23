@@ -26,7 +26,6 @@ const Pazel = () => {
       
         newNumbers[rowIndex][cellIndex] = null;
         newNumbers[emptyRowIndex][emptyCellIndex] = cellNumber;
-      
         setNumberPazel(newNumbers);
         setEmptyCell(cell);
 
@@ -38,7 +37,6 @@ const Pazel = () => {
     // event click and and call function for move tile
     const moving = (rowIndex,cellIndex) => {
         const cell = (rowIndex * 3) + (cellIndex + 1)
-        console.log(cell)
         if(cell - 1 === emptyCell || cell + 1 === emptyCell || cell - 3 === emptyCell || cell + 3 === emptyCell){
             handleMove(cell, rowIndex, cellIndex);
         }
@@ -50,7 +48,7 @@ const Pazel = () => {
 
     // function finish game
     const finishGame = (move, numberPazel, finish, cell, rowIndex, cellIndex) => {
-        if(move === 50 && numberPazel === finish) {
+        if(move === 81 && numberPazel === finish) {
             alert('شما برنده شدید');
         } else if(move >= 81 ){
             alert('شما باختید');
